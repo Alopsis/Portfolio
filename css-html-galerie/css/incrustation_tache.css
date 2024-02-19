@@ -1,0 +1,31 @@
+.tache-container{
+    width:400px;
+    height: 400px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.image-contain{
+    position: absolute;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+}
+.image-contain-in{
+    position: absolute;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    mix-blend-mode: screen;
+    
+}
+.div-text{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+.mt-5{
+    margin-top: 5%;
+}

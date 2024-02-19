@@ -1,0 +1,51 @@
+.image-texted {
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../images/laidlow.jpeg");
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    -webkit-background-clip: text;
+    background-attachment: fixed;
+    letter-spacing: -1px;
+    -webkit-text-fill-color: rgba(255,9,9,0);
+    word-break: break-all;
+    line-height: 9.5px;
+    font-weight: 900;
+}
+
+.tache-container{
+    width:400px;
+    height: 400px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.image-contain{
+    position: absolute;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+}
+.image-contain-in{
+    position: absolute;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    mix-blend-mode: screen;
+    
+}
+.div-text{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+.mt-5{
+    margin-top: 5%;
+}

@@ -59,8 +59,7 @@ window.addEventListener('scroll', () => {
 });
 
 var creation = [
-  { Titre: "Menu vertical", lien: "https://github.com/Alopsis/InclinedChoiceHalfAccordion", videosrc: "./video/2023-09-17_09-47-01.mkv", option: "html,css,js" },
-  { Titre: "Menu verticael", lien: "https://github.com/Alopsis/InclinedChoiceHalfAccordion", videosrc: "./video/2023-09-17_09-47-01.mkv", option: "html,php" }
+  { Titre: "Menu vertical", lien: "https://github.com/Alopsis/InclinedChoiceHalfAccordion", videosrc: "./video/2023-09-17_09-47-01.mkv", option: "html,css,js,php" },
 ];
 let crea_affichage = [0];
 function makecreation(nombre) {
@@ -103,81 +102,10 @@ function makecreation(nombre) {
   crea_affichage[nombre] = 1;
 }
 
-function deletecreation(number) {
-  console.log("delete"+number);
-  let elem = document.getElementsByClassName('creation-item');
-  console.log(elem[0]);
-  console.log(elem[0].children[1].children[0].innerHTML);
-
-  for (let i = 0; i < elem.length; i++) {
-    if (elem[i].children[1].children[0].innerHTML == creation[number].Titre) {
-      console.log("REMOVE");
-      elem[i].remove();
-    }
-
-  }
-}
-function contains(a, obj) {
-  for (var i = 0; i < a.length; i++) {
-    if (a[i] === obj) {
-      return true;
-    }
-  }
-  return false;
-}
 
 
-function estDansFiltre(nombre) {
-  let elem = creation[nombre];
-  let filtre = document.getElementsByClassName("modal-input");
 
-  for (i = 0; i < filtre.length; i++) {
-    let options = elem.option .split(',');
-    if (filtre[i].checked) {
-      console.log("Le filtre " + filtre[i].value + " est coché");
-      if (contains(options, filtre[i].value)) {
-        console.log("true");
-        return true;
-      }
-    }
 
-  }
-
-  return false;
-}
-function actualiseCreation() {
-  let creations = creation.length;
-  for (let i = 0; i < creations; i++) {
-    if (estDansFiltre(i)) {
-      if(crea_affichage[i] == 0){
-        makecreation(i);
-        crea_affichage[i] == 1;
-      }
-    } else {
-      console.log("cas 2");
-      if(crea_affichage[i] == 1){
-        deletecreation(i);
-        crea_affichage[i] = 0;
-      }
-    }
-
-  }
-}
-window.addEventListener("load", (event) => {
-  for (let i = 0; i < creation.length; i++) {
-    makecreation(i);
-    crea_affichage[i] = 1;
-  }
-  document.getElementById('filtres-creation').addEventListener('click', function (e) {
-    document.getElementById('modal').style.display = 'block'
-  });
-
-  document.getElementById('modal-close').addEventListener('click', function (e) {
-    document.getElementById('modal').style.display = 'none';
-    actualiseCreation();
-  })
-
-});
 
 
 
